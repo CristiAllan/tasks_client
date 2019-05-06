@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class List extends Component {
   async checkTask(task) {
-    const url = `http://localhost:3001/tasks/${task.id}`;
+    const url = process.env.REACT_APP_API + `/tasks/${task.id}`;
 
     await fetch(url, {
       method: 'PUT',
@@ -24,7 +24,7 @@ class List extends Component {
 
   async deleteTask(task) {
     if (window.confirm(`Are you sure you want to delete: ${task.title}`)) {
-      const url = `http://localhost:3001/tasks/${task.id}`;
+      const url = process.env.REACT_APP_API + `/tasks/${task.id}`;
 
       await fetch(url, {
         method: 'DELETE',

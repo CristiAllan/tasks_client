@@ -8,7 +8,7 @@ function CreateTask(props) {
   const [show, setShow] = useState('');
 
   const handleSubmit = (async () => {
-    const url = `http://localhost:3001/tasks`;
+    const url = process.env.REACT_APP_API + '/tasks';
     await fetch(url, {
       method: 'POST',
       headers: {

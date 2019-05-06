@@ -15,7 +15,7 @@ class Tasks extends Component {
   }
 
   async loadTasks() {
-    const url = `http://localhost:3001/tasks`;
+    const url = process.env.REACT_APP_API + '/tasks';
     let response = await fetch(url, {
       method: 'GET',
       mode: 'cors',
